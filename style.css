@@ -16,6 +16,10 @@ body {
   padding: 28px 0 18px 0;
   text-align: center;
   border-bottom: 4px solid #005073;         /* Darker blue accent line */
+  /* Center all direct children horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Intel logo styling */
@@ -26,12 +30,13 @@ body {
   margin: 0 auto 10px auto;
 }
 
-/* Header text styling */
+/* Center the title and subheading text */
 .header h1 {
   color: #fff;                              /* White text on blue */
   font-size: 2.1em;
   margin: 0 0 8px 0;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 .header p {
@@ -39,6 +44,16 @@ body {
   font-size: 1.1em;
   margin: 0 auto;
   max-width: 600px;
+  text-align: center;
+}
+
+/* Optional: Center the language switcher if present */
+.header nav,
+.header .lang-switcher-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
 }
 
 /* Main container for the timeline */

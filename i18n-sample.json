@@ -1,0 +1,86 @@
+{
+  "en": {
+    "title": "Intel Sustainability Timeline",
+    "main_heading": "Intel Sustainability Timeline",
+    "main_subheading": "Explore Intel’s journey toward a more sustainable future.",
+    // ...other keys...
+    "footer_copyright": "© 2025 Intel Corporation"
+  },
+  "zh": {
+    "title": "英特尔可持续发展时间线",
+    "main_heading": "英特尔可持续发展时间线",
+    "main_subheading": "探索英特尔迈向更可持续未来的旅程。",
+    // ...other keys...
+    "footer_copyright": "© 2025 英特尔"
+  },
+  "hi": {
+    "title": "इंटेल स्थिरता समयरेखा",
+    "main_heading": "इंटेल स्थिरता समयरेखा",
+    "main_subheading": "इंटेल की अधिक स्थायी भविष्य की यात्रा का अन्वेषण करें।",
+    // ...other keys...
+    "footer_copyright": "© 2025 इंटेल"
+  },
+  "es": {
+    "title": "Cronología de Sostenibilidad de Intel",
+    "main_heading": "Cronología de Sostenibilidad de Intel",
+    "main_subheading": "Explora el camino de Intel hacia un futuro más sostenible.",
+    // ...other keys...
+    "footer_copyright": "© 2025 Intel"
+  },
+  "fr": {
+    "title": "Chronologie du développement durable d'Intel",
+    "main_heading": "Chronologie du développement durable d'Intel",
+    "main_subheading": "Découvrez le parcours d'Intel vers un avenir plus durable.",
+    // ...other keys...
+    "footer_copyright": "© 2025 Intel"
+  },
+  "de": {
+    "title": "Intel Nachhaltigkeits-Zeitachse",
+    "main_heading": "Intel Nachhaltigkeits-Zeitachse",
+    "main_subheading": "Entdecken Sie Intels Weg zu einer nachhaltigeren Zukunft.",
+    // ...other keys...
+    "footer_copyright": "© 2025 Intel"
+  },
+  "it": {
+    "title": "Cronologia della Sostenibilità Intel",
+    "main_heading": "Cronologia della Sostenibilità Intel",
+    "main_subheading": "Esplora il percorso di Intel verso un futuro più sostenibile.",
+    // ...other keys...
+    "footer_copyright": "© 2025 Intel"
+  },
+  "ar": {
+    "title": "الجدول الزمني للاستدامة في إنتل",
+    "main_heading": "الجدول الزمني للاستدامة في إنتل",
+    "main_subheading": "استكشف رحلة إنتل نحو مستقبل أكثر استدامة.",
+    // ...other keys...
+    "footer_copyright": "© 2025 شركة إنتل"
+  },
+  "bn": {
+    "title": "ইন্টেল স্থায়িত্ব টাইমলাইন",
+    "main_heading": "ইন্টেল স্থায়িত্ব টাইমলাইন",
+    "main_subheading": "ইন্টেলের আরও টেকসই ভবিষ্যতের যাত্রা অন্বেষণ করুন।",
+    // ...other keys...
+    "footer_copyright": "© 2025 ইন্টেল"
+  },
+  "ru": {
+    "title": "Хронология устойчивого развития Intel",
+    "main_heading": "Хронология устойчивого развития Intel",
+    "main_subheading": "Изучите путь Intel к более устойчивому будущему.",
+    // ...other keys...
+    "footer_copyright": "© 2025 Intel"
+  },
+  "pt": {
+    "title": "Linha do Tempo de Sustentabilidade da Intel",
+    "main_heading": "Linha do Tempo de Sustentabilidade da Intel",
+    "main_subheading": "Explore a jornada da Intel rumo a um futuro mais sustentável.",
+    // ...other keys...
+    "footer_copyright": "© 2025 Intel"
+  },
+  "ja": {
+    "title": "インテルのサステナビリティタイムライン",
+    "main_heading": "インテルのサステナビリティタイムライン",
+    "main_subheading": "インテルがより持続可能な未来に向けて歩む道を探る。",
+    // ...other keys...
+    "footer_copyright": "© 2025 インテル"
+  }
+}

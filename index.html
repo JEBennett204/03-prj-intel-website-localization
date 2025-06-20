@@ -15,16 +15,24 @@
   <header class="header" role="banner">
     <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
       <div class="d-flex align-items-center mb-3 mb-md-0">
-        <img src="intel-logo.svg" alt="Intel Logo" height="52" />
+        <img src="img/intel-header-logo.svg" alt="Intel Logo" height="52" />
         <h1 class="ms-3 mb-0" data-i18n="main_heading">Intel Sustainability Timeline</h1>
       </div>
       <!-- Language Switcher -->
       <nav aria-label="Language selector">
         <select id="lang-switcher" class="form-select form-select-sm" style="width:auto;" aria-label="Select language">
           <option value="en" selected>English</option>
-          <option value="ar">العربية</option>
-          <option value="he">עברית</option>
-          <option value="fa">فارسی</option>
+          <option value="zh">中文 (Chinese)</option>
+          <option value="hi">हिन्दी (Hindi)</option>
+          <option value="es">Español (Spanish)</option>
+          <option value="fr">Français (French)</option>
+          <option value="de">Deutsch (German)</option>
+          <option value="it">Italiano (Italian)</option>
+          <option value="ar">العربية (Arabic)</option>
+          <option value="bn">বাংলা (Bengali)</option>
+          <option value="ru">Русский (Russian)</option>
+          <option value="pt">Português (Portuguese)</option>
+          <option value="ja">日本語 (Japanese)</option>
         </select>
       </nav>
     </div>
@@ -258,7 +266,7 @@
   <footer class="footer mt-5" role="contentinfo">
     <div class="footer-container">
       <div class="footer-left" data-i18n="footer_copyright">
-        &copy; 2024 Intel Corporation
+        © 2025 Intel Corporation
       </div>
       <nav class="footer-right" aria-label="Footer navigation">
         <a href="#" class="footer-link" data-i18n="footer_privacy">Privacy Policy</a>
@@ -270,9 +278,16 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- RTL/LTR & Language Switcher Script -->
+  <!-- Language Detection & Dynamic Translation Script -->
   <script>
-    // Language data (placeholders for demonstration)
+    // Supported languages (top 15 + your current ones)
+    const supportedLangs = [
+      "en", "zh", "hi", "es", "fr", "ar", "bn", "ru", "pt", "id", "ur", "de", "ja", "sw", "mr", "he", "fa"
+    ];
+    // RTL languages
+    const rtlLangs = ["ar", "he", "fa", "ur"];
+
+    // Example translations (expand as needed, or load from external JSON)
     const translations = {
       en: {
         title: "Intel Sustainability Timeline",
@@ -301,7 +316,7 @@
         footer_privacy: "Privacy Policy",
         footer_terms: "Terms of Use",
         footer_contact: "Contact",
-        footer_copyright: "&copy; 2024 Intel Corporation"
+        footer_copyright: "© 2025 Intel Corporation"
       },
       ar: {
         title: "الجدول الزمني للاستدامة في إنتل",
@@ -330,7 +345,7 @@
         footer_privacy: "سياسة الخصوصية",
         footer_terms: "شروط الاستخدام",
         footer_contact: "اتصل بنا",
-        footer_copyright: "&copy; 2024 شركة إنتل"
+        footer_copyright: "© 2025 شركة إنتل"
       },
       he: {
         title: "ציר הזמן של קיימות באינטל",
@@ -359,7 +374,7 @@
         footer_privacy: "מדיניות פרטיות",
         footer_terms: "תנאי שימוש",
         footer_contact: "צור קשר",
-        footer_copyright: "&copy; 2024 אינטל"
+        footer_copyright: "© 2025 אינטל"
       },
       fa: {
         title: "جدول زمانی پایداری اینتل",
@@ -388,32 +403,67 @@
         footer_privacy: "سیاست حفظ حریم خصوصی",
         footer_terms: "شرایط استفاده",
         footer_contact: "تماس",
-        footer_copyright: "&copy; 2024 اینتل"
+        footer_copyright: "© 2025 اینتل"
+      },
+      es: {
+        title: "Cronología de Sostenibilidad de Intel",
+        main_heading: "Cronología de Sostenibilidad de Intel",
+        main_subheading: "Explora el camino de Intel hacia un futuro más sostenible.",
+        feature1_heading: "Impacto Global",
+        feature1_desc: "Las iniciativas de sostenibilidad de Intel generan cambios positivos en todo el mundo, promoviendo la tecnología para un planeta mejor.",
+        feature2_heading: "Economía Circular",
+        feature2_desc: "Reducimos residuos y reutilizamos recursos, apoyando una economía circular para un futuro más verde y sostenible.",
+        feature3_heading: "Energía Limpia",
+        feature3_desc: "Intel invierte en energía renovable y tecnologías energéticamente eficientes para impulsar el progreso de manera sostenible.",
+        learn_more: "Aprender Más",
+        newsletter_heading: "Mantente Actualizado",
+        newsletter_desc: "Suscríbete al boletín de sostenibilidad de Intel para recibir las últimas noticias, avances e innovaciones.",
+        newsletter_privacy: "Respetamos tu privacidad. Puedes darte de baja en cualquier momento.",
+        form_name_label: "Nombre",
+        form_email_label: "Dirección de correo electrónico",
+        subscribe_btn: "Suscribirse",
+        faq_heading: "Preguntas Frecuentes",
+        faq1_q: "¿Cuál es el enfoque de Intel hacia la sostenibilidad?",
+        faq1_a: "Intel integra la sostenibilidad en todos los aspectos de su negocio, desde el diseño del producto hasta la gestión de la cadena de suministro, con el objetivo de tener un impacto global positivo.",
+        faq2_q: "¿Cómo puedo aprender más sobre los objetivos medioambientales de Intel?",
+        faq2_a: "Visita nuestra <a href=\"#\" class=\"intel-learn-link\">página de sostenibilidad</a> para obtener información detallada sobre nuestros objetivos, avances e iniciativas.",
+        faq3_q: "¿Está segura mi información al suscribirme?",
+        faq3_a: "Sí. Utilizamos seguridad estándar de la industria y nunca compartimos tu información sin consentimiento.",
+        footer_privacy: "Política de Privacidad",
+        footer_terms: "Términos de Uso",
+        footer_contact: "Contacto",
+        footer_copyright: "© 2025 Intel Corporation"
       }
     };
 
-    // RTL language codes
-    const rtlLangs = ['ar', 'he', 'fa'];
+    // Detect user's preferred language (browser/system)
+    function detectUserLang() {
+      const navLangs = navigator.languages ? navigator.languages : [navigator.language || navigator.userLanguage];
+      for (let lang of navLangs) {
+        lang = lang.toLowerCase().slice(0,2);
+        if (supportedLangs.includes(lang)) return lang;
+      }
+      return "en"; // fallback
+    }
 
-    // Bootstrap CSS URLs
-    const BOOTSTRAP_LTR = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css";
-    const BOOTSTRAP_RTL = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css";
-
-    // Update language and direction
-    function setLanguage(lang) {
-      // Set lang attribute
-      document.documentElement.lang = lang;
-      // Set dir attribute
-      document.documentElement.dir = rtlLangs.includes(lang) ? "rtl" : "ltr";
-      // Swap Bootstrap CSS for RTL/LTR
+    // Set direction and Bootstrap CSS for RTL/LTR
+    function setDirection(lang) {
+      const dir = rtlLangs.includes(lang) ? "rtl" : "ltr";
+      document.documentElement.dir = dir;
+      // Swap Bootstrap CSS for RTL if needed
       const bootstrapCss = document.getElementById("bootstrap-css");
-      bootstrapCss.href = rtlLangs.includes(lang) ? BOOTSTRAP_RTL : BOOTSTRAP_LTR;
-      // Update all text nodes with data-i18n
-      const dict = translations[lang] || translations.en;
+      bootstrapCss.href = dir === "rtl"
+        ? "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
+        : "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css";
+    }
+
+    // Translate all elements with data-i18n
+    function translatePage(lang) {
+      const dict = translations[lang] || translations["en"];
       document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
         if (dict[key]) {
-          // If innerHTML contains HTML (e.g., links), use innerHTML
+          // If translation contains HTML (e.g., links), use innerHTML
           if (dict[key].includes('<a')) {
             el.innerHTML = dict[key];
           } else {
@@ -421,35 +471,19 @@
           }
         }
       });
-      // Accessibility: Announce language and direction change
-      announceLangDir(lang, document.documentElement.dir);
+      // Set <title>
+      if (dict.title) document.title = dict.title;
     }
 
-    // Accessibility: Live region for announcing language/dir changes
-    function announceLangDir(lang, dir) {
-      let live = document.getElementById("lang-dir-live");
-      if (!live) {
-        live = document.createElement("div");
-        live.id = "lang-dir-live";
-        live.setAttribute("aria-live", "polite");
-        live.className = "visually-hidden";
-        document.body.appendChild(live);
-      }
-      const langName = {
-        en: "English", ar: "العربية", he: "עברית", fa: "فارسی"
-      }[lang] || lang;
-      live.textContent = `Language set to ${langName}, direction ${dir.toUpperCase()}`;
-    }
-
-    // Language switcher event
+    // On page load: detect language, set direction, translate
     document.addEventListener("DOMContentLoaded", function() {
-      const langSwitcher = document.getElementById("lang-switcher");
-      // Set initial language based on <html lang="">
-      setLanguage(document.documentElement.lang || "en");
-      langSwitcher.value = document.documentElement.lang || "en";
-      langSwitcher.addEventListener("change", function() {
-        setLanguage(this.value);
-      });
+      // 1. Detect language
+      const userLang = detectUserLang();
+      // 2. Set <html lang=""> and direction
+      document.documentElement.lang = userLang;
+      setDirection(userLang);
+      // 3. Translate page
+      translatePage(userLang);
     });
   </script>
 </body>
