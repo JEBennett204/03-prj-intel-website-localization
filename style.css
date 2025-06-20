@@ -1,0 +1,672 @@
+/* Import Google Fonts: Roboto is recommended for Intel branding */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+/* Set up the basic font and background for the page */
+body {
+  font-family: 'Roboto', Arial, sans-serif; /* Use Roboto or fallback to Arial */
+  background-color: #fff;                   /* White background for 2025 theme */
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s;
+}
+
+/* Header with Intel logo */
+.header {
+  background-color: #0071c5;                /* Intel blue for header */
+  padding: 28px 0 18px 0;
+  text-align: center;
+  border-bottom: 4px solid #005073;         /* Darker blue accent line */
+}
+
+/* Intel logo styling */
+.header img {
+  height: 52px;
+  width: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+/* Header text styling */
+.header h1 {
+  color: #fff;                              /* White text on blue */
+  font-size: 2.1em;
+  margin: 0 0 8px 0;
+  letter-spacing: 1px;
+}
+
+.header p {
+  color: #e6f2fa;                           /* Light blue for subheading */
+  font-size: 1.1em;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+/* Main container for the timeline */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 16px;
+}
+
+/* Timeline as a horizontal row of tiles */
+.timeline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;                                /* More space for blue accent */
+  justify-content: center;
+  padding: 28px 0;
+  flex-direction: row;
+}
+
+/* Each timeline event as a tile (just the image) */
+.timeline-event {
+  background: none;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(0,113,197,0.10); /* Soft blue shadow */
+  border: 2px solid #e6f2fa;                /* Blue accent border */
+  width: 255px;
+  min-width: 255px;
+  max-width: 255px;
+  padding: 0;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s, border 0.3s, transform 0.3s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+}
+
+/* Container for image and overlay text */
+.timeline-event-image-container {
+  position: relative;
+  width: 100%;
+  height: 255px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,113,197,0.10);
+  border: 2px solid #0071c5;                /* Blue border for image */
+  background: #fff;
+  margin-bottom: 0;
+  transition: box-shadow 0.3s, border 0.3s, transform 0.3s;
+}
+
+/* Responsive images inside tiles */
+.timeline-event img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 0;
+  transition: filter 0.3s;
+  display: block;
+}
+
+/* Overlay text that appears on hover */
+.timeline-event .overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: rgba(0, 113, 197, 0.98);      /* Almost solid blue for readability */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  padding: 18px 10px;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 500;
+  border-radius: 14px;
+  pointer-events: none;
+  word-break: break-word;
+}
+
+/* When hovering over the image container, blur the image and show overlay text */
+.timeline-event-image-container:hover img,
+.timeline-event-image-container:focus img {
+  filter: blur(4px);
+}
+
+.timeline-event-image-container:hover .overlay-text,
+.timeline-event-image-container:focus .overlay-text {
+  opacity: 1;
+}
+
+/* Year and descriptor below the image, scaled to tile size and blue accent */
+.timeline-event h2 {
+  color: #0071c5;
+  font-size: 1.35em;         /* Larger for tile size */
+  margin: 12px 0 2px 0;
+  text-align: center;
+  font-weight: 700;
+  background: none;
+  letter-spacing: 1px;
+}
+
+.timeline-event .date {
+  color: #005073;
+  font-size: 1.08em;         /* Larger for tile size */
+  margin-bottom: 12px;
+  text-align: center;
+  background: none;
+  font-weight: 500;
+}
+
+/* Remove description paragraph from tile (not needed anymore) */
+.timeline-event p {
+  display: none;
+}
+
+/* Remove marker circle */
+.timeline-event::before {
+  display: none;
+}
+
+/* Hover effect for the image tile and tile border */
+.timeline-event-image-container:hover,
+.timeline-event-image-container:focus {
+  box-shadow: 0 6px 32px rgba(0,113,197,0.22);
+  border: 2.5px solid #0071c5;
+  transform: translateY(-4px) scale(1.04);
+  background: #0071c5; /* Blue background on hover for accent */
+}
+
+.timeline-event:hover,
+.timeline-event:focus-within {
+  border: 2.5px solid #0071c5; /* Blue border accent on hover */
+  box-shadow: 0 6px 32px rgba(0,113,197,0.18);
+}
+
+/* Timeline Wheel Container */
+.timeline-wheel-container {
+  width: 100%;
+  background: #fff;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Horizontal scrollable timeline wheel */
+.timeline-wheel {
+  display: flex; /* Arrange items in a row */
+  flex-direction: row;
+  align-items: stretch;
+  gap: clamp(1rem, 2vw, 2rem); /* Responsive gap */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: visible;
+  scroll-snap-type: x mandatory; /* Snap to items */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  padding: 2rem 0 2rem 2vw;
+  margin: 0 auto;
+  scrollbar-width: thin;
+  scrollbar-color: #0071c5 #e6f2fa;
+}
+
+/* Hide vertical scrollbar for a cleaner look */
+.timeline-wheel::-webkit-scrollbar {
+  height: 10px;
+}
+.timeline-wheel::-webkit-scrollbar-thumb {
+  background: #0071c5;
+  border-radius: 5px;
+}
+.timeline-wheel::-webkit-scrollbar-track {
+  background: #e6f2fa;
+  border-radius: 5px;
+}
+
+/* Timeline Wheel Item */
+.timeline-wheel-item {
+  flex: 0 0 clamp(220px, 24vw, 320px); /* Responsive width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 1.2em;
+  box-shadow: 0 2px 16px rgba(0,113,197,0.10);
+  border: 2px solid #e6f2fa;
+  scroll-snap-align: start;
+  transition: box-shadow 0.3s, border 0.3s, background 0.3s, transform 0.3s;
+  min-height: 340px;
+  margin-bottom: 0;
+  position: relative;
+  outline: none;
+  z-index: 1;
+}
+
+/* Focus and hover effect for accessibility and interaction */
+.timeline-wheel-item:focus,
+.timeline-wheel-item:hover {
+  border: 2.5px solid #0071c5;
+  box-shadow: 0 8px 36px rgba(0,113,197,0.22);
+  background: #0071c5;
+  transform: scale(1.07); /* Grow the tile smoothly */
+  z-index: 10;            /* Bring hovered tile above others */
+}
+.timeline-wheel-item:focus .timeline-wheel-label,
+.timeline-wheel-item:hover .timeline-wheel-label,
+.timeline-wheel-item:focus .timeline-wheel-desc,
+.timeline-wheel-item:hover .timeline-wheel-desc {
+  color: #fff;
+}
+.timeline-wheel-item:focus .timeline-wheel-year,
+.timeline-wheel-item:hover .timeline-wheel-year {
+  color: #e6f2fa;
+}
+
+/* Timeline Image Container */
+.timeline-wheel-img-container {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Make image square */
+  border-radius: 1.2em 1.2em 0 0;
+  overflow: hidden;
+  background: #e6f2fa;
+  border-bottom: 2px solid #0071c5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Timeline Image */
+.timeline-wheel-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s;
+  display: block;
+}
+
+/* Remove image blur on hover/focus */
+.timeline-wheel-item:focus .timeline-wheel-img-container img,
+.timeline-wheel-item:hover .timeline-wheel-img-container img {
+  filter: none;
+}
+
+/* Timeline Label (Year and Title) */
+.timeline-wheel-label {
+  width: 100%;
+  padding: 1em 0.5em 0.2em 0.5em;
+  text-align: center;
+  color: #0071c5;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: none;
+  transition: color 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+.timeline-wheel-year {
+  color: #0071c5;
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.timeline-wheel-title {
+  color: #005073;
+  font-size: 1em;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+/* Timeline Description (hidden by default, shown on hover/focus) */
+.timeline-wheel-desc {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  color: #222;
+  font-size: 1em;
+  padding: 0 1em;
+  text-align: center;
+  transition: opacity 0.3s, max-height 0.3s, color 0.3s, padding 0.3s;
+  pointer-events: none;
+  background: none;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.timeline-wheel-item:focus .timeline-wheel-desc,
+.timeline-wheel-item:hover .timeline-wheel-desc {
+  opacity: 1;
+  max-height: 200px;
+  color: #fff;
+  background: none;
+  pointer-events: auto;
+  margin: 0.5em 0 1em 0;
+  padding: 1em 1em 1.2em 1em; /* Add more space for readability */
+}
+
+/* Prevent layout shift by allowing overflow and keeping items in a row */
+.timeline-wheel {
+  /* ...existing code... */
+  align-items: flex-start; /* Prevent vertical shifting */
+}
+
+/* Responsive design: keep timeline horizontal on all screens */
+@media (max-width: 900px) {
+  .timeline {
+    gap: 16px;
+  }
+  .timeline-event {
+    width: 60vw;
+    min-width: 60vw;
+    max-width: 60vw;
+  }
+  .timeline-event-image-container {
+    height: 60vw;
+    max-height: 60vw;
+    min-height: 120px;
+  }
+  .timeline-event h2 {
+    font-size: 1.1em;
+  }
+  .timeline-event .date {
+    font-size: 0.98em;
+  }
+  .timeline-wheel-item {
+    min-height: 220px;
+  }
+  .timeline-wheel-label {
+    font-size: 1em;
+  }
+  .timeline-wheel-year {
+    font-size: 1.05em;
+  }
+  .timeline-wheel-item:focus,
+  .timeline-wheel-item:hover {
+    transform: scale(1.04);
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 12px 4px;
+  }
+  .timeline {
+    flex-direction: row;
+    gap: 8px;
+    align-items: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .timeline-event {
+    width: 80vw;
+    min-width: 80vw;
+    max-width: 80vw;
+    padding: 0;
+  }
+  .timeline-event-image-container {
+    height: 80vw;
+    max-height: 80vw;
+    min-height: 100px;
+  }
+  .header {
+    padding: 16px 0 8px 0;
+  }
+  .header img {
+    height: 36px;
+  }
+  .timeline-event .overlay-text {
+    font-size: 0.95em;
+    padding: 10px 4px;
+  }
+  .timeline-event h2 {
+    font-size: 1em;
+  }
+  .timeline-event .date {
+    font-size: 0.9em;
+  }
+  .timeline-wheel {
+    gap: 0.7em;
+    padding: 1em 0 1em 1vw;
+  }
+  .timeline-wheel-item {
+    flex-basis: clamp(160px, 70vw, 240px);
+    min-height: 160px;
+  }
+  .timeline-wheel-label {
+    font-size: 0.98em;
+    padding: 0.7em 0.3em 0.1em 0.3em;
+  }
+  .timeline-wheel-desc {
+    font-size: 0.95em;
+    padding: 0 0.5em;
+  }
+}
+
+/* Instructions styling */
+.timeline-instructions {
+  color: #0071c5;
+  font-size: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* --- Three-Column Section Styling --- */
+.intel-section {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,113,197,0.06);
+  padding: 48px 0 36px 0;
+  margin-bottom: 48px;
+}
+
+.intel-feature-col {
+  padding: 32px 24px;
+  background: #f8fafc;
+  border-radius: 14px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 8px rgba(0,113,197,0.04);
+  transition: box-shadow 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.intel-feature-col:hover,
+.intel-feature-col:focus-within {
+  box-shadow: 0 4px 24px rgba(0,113,197,0.10);
+}
+
+.intel-feature-icon {
+  font-size: 2.6rem;
+  color: #0071c5;
+  margin-bottom: 18px;
+  line-height: 1;
+}
+
+.intel-feature-heading {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #003c71;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.intel-feature-desc {
+  font-size: 1.08rem;
+  color: #222;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.intel-learn-link {
+  color: #0071c5;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+}
+.intel-learn-link:hover,
+.intel-learn-link:focus {
+  color: #005073;
+  border-bottom: 2px solid #0071c5;
+  text-decoration: underline;
+  outline: none;
+}
+
+/* --- Newsletter Form Styling --- */
+.intel-newsletter-section {
+  background: #f8fafc;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,113,197,0.06);
+  padding: 44px 0 36px 0;
+  margin-bottom: 48px;
+}
+
+.intel-newsletter-form {
+  max-width: 520px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px 28px 28px 28px;
+  box-shadow: 0 1px 8px rgba(0,113,197,0.04);
+}
+
+.intel-newsletter-form .form-label {
+  font-weight: 500;
+  color: #003c71;
+  font-size: 1.05rem;
+}
+
+.intel-newsletter-form .form-control {
+  border-radius: 8px;
+  font-size: 1.08rem;
+  padding: 0.7em 1em;
+  margin-bottom: 18px;
+  border: 1.5px solid #e6f2fa;
+  background: #f8fafc;
+  transition: border-color 0.2s;
+}
+
+.intel-newsletter-form .form-control:focus {
+  border-color: #0071c5;
+  box-shadow: 0 0 0 2px rgba(0,113,197,0.10);
+}
+
+.intel-newsletter-form .btn-primary {
+  background: #0071c5;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.08rem;
+  padding: 0.7em 2.2em;
+  transition: background 0.2s;
+  box-shadow: 0 1px 8px rgba(0,113,197,0.04);
+}
+
+.intel-newsletter-form .btn-primary:hover,
+.intel-newsletter-form .btn-primary:focus {
+  background: #005073;
+  outline: none;
+}
+
+/* --- Footer Styling (Override for new layout) --- */
+.footer {
+  background: #fff;
+  color: #003c71;
+  border-top: 2px solid #e6f2fa;
+  font-size: 1rem;
+  padding: 24px 0 18px 0;
+  margin-top: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.footer .footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.footer .footer-left {
+  text-align: left;
+  font-size: 1em;
+  color: #003c71;
+}
+
+.footer .footer-right {
+  text-align: right;
+}
+
+.footer .footer-link {
+  color: #0071c5;
+  text-decoration: none;
+  margin-left: 24px;
+  font-weight: 500;
+  transition: color 0.2s, text-decoration 0.2s;
+  font-size: 1em;
+}
+.footer .footer-link:first-child {
+  margin-left: 0;
+}
+.footer .footer-link:hover,
+.footer .footer-link:focus {
+  color: #005073;
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Responsive: Stack footer links on mobile */
+@media (max-width: 600px) {
+  .footer .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0 6px;
+  }
+  .footer .footer-right {
+    text-align: left;
+    margin-top: 6px;
+  }
+  .footer .footer-link {
+    margin-left: 0;
+    margin-right: 18px;
+    display: inline-block;
+  }
+}
+
+/* --- RTL Support for New Sections --- */
+[dir="rtl"] .intel-section,
+[dir="rtl"] .intel-feature-col,
+[dir="rtl"] .intel-newsletter-section,
+[dir="rtl"] .intel-newsletter-form,
+[dir="rtl"] .footer .footer-container {
+  direction: rtl;
+}
+
+[dir="rtl"] .footer .footer-container {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer .footer-left {
+  text-align: right;
+}
+
+[dir="rtl"] .footer .footer-right {
+  text-align: left;
+}
+
+[dir="rtl"] .footer .footer-link {
+  margin-left: 0;
+  margin-right: 24px;
+}

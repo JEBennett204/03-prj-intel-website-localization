@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="title">Intel Sustainability Timeline</title>
+  <!-- Bootstrap CSS (LTR by default) -->
+  <link id="bootstrap-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header with Language Switcher -->
+  <header class="header" role="banner">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <div class="d-flex align-items-center mb-3 mb-md-0">
+        <img src="intel-logo.svg" alt="Intel Logo" height="52" />
+        <h1 class="ms-3 mb-0" data-i18n="main_heading">Intel Sustainability Timeline</h1>
+      </div>
+      <!-- Language Switcher -->
+      <nav aria-label="Language selector">
+        <select id="lang-switcher" class="form-select form-select-sm" style="width:auto;" aria-label="Select language">
+          <option value="en" selected>English</option>
+          <option value="ar">العربية</option>
+          <option value="he">עברית</option>
+          <option value="fa">فارسی</option>
+        </select>
+      </nav>
+    </div>
+    <p class="mt-2" data-i18n="main_subheading">Explore Intel’s journey toward a more sustainable future.</p>
+  </header>
+
+  <!-- Timeline Wheel Container -->
+  <main class="timeline-wheel-container">
+    <!-- Accessible horizontal timeline, using ARIA role -->
+    <section class="timeline-wheel" role="list" aria-label="Intel Sustainability Timeline">
+      <!-- Timeline Item Example -->
+      <article class="timeline-wheel-item" role="listitem" tabindex="0">
+        <div class="timeline-wheel-img-container">
+          <img src="img/1.jpg" alt="Intel's first building in 1968" />
+        </div>
+        <div class="timeline-wheel-label">
+          <span class="timeline-wheel-year">1968</span>
+          <span class="timeline-wheel-title">Intel Founded</span>
+        </div>
+        <div class="timeline-wheel-desc">
+          Robert Noyce and Gordon Moore rename NM Electronics to Intel Corporation, laying the foundation for decades of innovation.
+        </div>
+      </article>
+      <!-- Repeat for each timeline event -->
+      <article class="timeline-wheel-item" role="listitem" tabindex="0">
+        <div class="timeline-wheel-img-container">
+          <img src="img/2.jpeg" alt="Intel 4004 microprocessor" />
+        </div>
+        <div class="timeline-wheel-label">
+          <span class="timeline-wheel-year">1971</span>
+          <span class="timeline-wheel-title">First Microprocessor</span>
+        </div>
+        <div class="timeline-wheel-desc">
+          Intel debuts the 4004, the world's first commercial microprocessor, igniting the microprocessor revolution.
+        </div>
+      </article>
+      <article class="timeline-wheel-item" role="listitem" tabindex="0">
+        <div class="timeline-wheel-img-container">
+          <img src="img/3.jpg" alt="8086 processor" />
+        </div>
+        <div class="timeline-wheel-label">
+          <span class="timeline-wheel-year">1978</span>
+          <span class="timeline-wheel-title">8086 Processor</span>
+        </div>
+        <div class="timeline-wheel-desc">
+          Launch of the 8086 processor, establishing the x86 architecture that drives countless PCs and servers.
+        </div>
+      </article>
+      <article class="timeline-wheel-item" role="listitem" tabindex="0">
+        <div class="timeline-wheel-img-container">
+          <img src="img/4.jpg" alt="386 processor" />
+        </div>
+        <div class="timeline-wheel-label">
+          <span class="timeline-wheel-year">1985</span>
+          <span class="timeline-wheel-title">386 Processor</span>
+        </div>
+        <div class="timeline-wheel-desc">
+          Intel introduces the 386 processor with 32-bit architecture, ushering in a new era of performance.
+        </div>
+      </article>
+      <article class="timeline-wheel-item" role="listitem" tabindex="0">
+        <div class="timeline-wheel-img-container">
+          <img src="img/5.jpg" alt="GHG Emissions" />
+        </div>
+        <div class="timeline-wheel-label">
+          <span class="timeline-wheel-year">2006</span>
+          <span class="timeline-wheel-title">Peak GHG Emissions</span>
+        </div>
+        <div class="timeline-wheel-desc">
+          Intel's highest annual greenhouse gas emissions for operations. Investments in sustainability follow.
+        </div>
+      </article>
+      <article class="timeline-wheel-item" role="listitem" tabindex="0">
+        <div class="timeline-wheel-img-container">
+          <img src="img/8.jpg" alt="RISE strategy" />
+        </div>
+        <div class="timeline-wheel-label">
+          <span class="timeline-wheel-year">2020</span>
+          <span class="timeline-wheel-title">RISE Strategy</span>
+        </div>
+        <div class="timeline-wheel-desc">
+          Intel launches its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy and 2030 goals.
+        </div>
+      </article>
+      <article class="timeline-wheel-item" role="listitem" tabindex="0">
+        <div class="timeline-wheel-img-container">
+          <img src="img/6.jpg" alt="Net-Zero by 2040" />
+        </div>
+        <div class="timeline-wheel-label">
+          <span class="timeline-wheel-year">2022</span>
+          <span class="timeline-wheel-title">Net-Zero By 2040</span>
+        </div>
+        <div class="timeline-wheel-desc">
+          Intel commits to net-zero greenhouse gas emissions (Scope 1 and 2) across global operations by 2040.
+        </div>
+      </article>
+      <article class="timeline-wheel-item" role="listitem" tabindex="0">
+        <div class="timeline-wheel-img-container">
+          <img src="img/7.jpg" alt="Renewable Electricity" />
+        </div>
+        <div class="timeline-wheel-label">
+          <span class="timeline-wheel-year">2023</span>
+          <span class="timeline-wheel-title">Renewable Electricity</span>
+        </div>
+        <div class="timeline-wheel-desc">
+          Intel achieves 99% renewable electricity usage worldwide, lowering carbon emissions.
+        </div>
+      </article>
+      <article class="timeline-wheel-item" role="listitem" tabindex="0">
+        <div class="timeline-wheel-img-container">
+          <img src="img/9.webp" alt="Sustainability Summit" />
+        </div>
+        <div class="timeline-wheel-label">
+          <span class="timeline-wheel-year">2024</span>
+          <span class="timeline-wheel-title">Sustainability Summit</span>
+        </div>
+        <div class="timeline-wheel-desc">
+          Intel hosts its first Sustainability Summit, uniting leaders for next-generation sustainable manufacturing.
+        </div>
+      </article>
+    </section>
+    <p class="timeline-instructions" style="text-align:center;">
+      Scroll or swipe to view timeline | Hover or focus on tiles to learn more!
+    </p>
+  </main>
+
+  <!-- Three-Column Info Section -->
+  <section class="intel-section container my-5" aria-label="Sustainability Highlights">
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4 d-flex">
+        <div class="intel-feature-col w-100 h-100 shadow-sm border border-2 border-light rounded-4">
+          <span class="intel-feature-icon bi bi-globe2" aria-hidden="true"></span>
+          <h3 class="intel-feature-heading" data-i18n="feature1_heading">Global Impact</h3>
+          <p class="intel-feature-desc" data-i18n="feature1_desc">Intel’s sustainability initiatives drive positive change worldwide, advancing technology for a better planet.</p>
+          <a href="#" class="intel-learn-link" data-i18n="learn_more" aria-label="Learn more about Intel's global impact">Learn More</a>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex">
+        <div class="intel-feature-col w-100 h-100 shadow-sm border border-2 border-light rounded-4">
+          <span class="intel-feature-icon bi bi-recycle" aria-hidden="true"></span>
+          <h3 class="intel-feature-heading" data-i18n="feature2_heading">Circular Economy</h3>
+          <p class="intel-feature-desc" data-i18n="feature2_desc">We reduce waste and reuse resources, supporting a circular economy for a greener, more sustainable future.</p>
+          <a href="#" class="intel-learn-link" data-i18n="learn_more" aria-label="Learn more about Intel's circular economy efforts">Learn More</a>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex">
+        <div class="intel-feature-col w-100 h-100 shadow-sm border border-2 border-light rounded-4">
+          <span class="intel-feature-icon bi bi-lightning-charge-fill" aria-hidden="true"></span>
+          <h3 class="intel-feature-heading" data-i18n="feature3_heading">Clean Energy</h3>
+          <p class="intel-feature-desc" data-i18n="feature3_desc">Intel invests in renewable energy and energy-efficient technologies to power progress sustainably.</p>
+          <a href="#" class="intel-learn-link" data-i18n="learn_more" aria-label="Learn more about Intel's clean energy initiatives">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Subscription Section -->
+  <section class="intel-newsletter-section container my-5" aria-label="Newsletter Subscription">
+    <div class="row justify-content-center align-items-center g-4">
+      <div class="col-lg-5 mb-4 mb-lg-0">
+        <div class="h-100 d-flex flex-column justify-content-center">
+          <h2 class="fw-bold mb-3 text-primary" style="color:#0071c5;" data-i18n="newsletter_heading">Stay Updated</h2>
+          <p class="mb-2 fs-5 text-body" data-i18n="newsletter_desc">Subscribe to Intel’s Sustainability Newsletter for the latest news, progress, and innovations.</p>
+          <p class="text-secondary small" data-i18n="newsletter_privacy">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <form class="intel-newsletter-form shadow-sm border border-2 border-light rounded-4" aria-labelledby="newsletter-heading">
+          <div class="mb-3">
+            <label for="subscriber-name" class="form-label" data-i18n="form_name_label">Name</label>
+            <input type="text" class="form-control" id="subscriber-name" name="name" required aria-required="true" autocomplete="name" />
+          </div>
+          <div class="mb-3">
+            <label for="subscriber-email" class="form-label" data-i18n="form_email_label">Email address</label>
+            <input type="email" class="form-control" id="subscriber-email" name="email" required aria-required="true" autocomplete="email" />
+          </div>
+          <button type="submit" class="btn btn-primary fw-semibold px-4" data-i18n="subscribe_btn" aria-label="Subscribe to newsletter">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accordion (FAQ) -->
+  <section class="container my-5" aria-label="Frequently Asked Questions">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="fw-bold mb-4 text-primary" style="color:#0071c5;" data-i18n="faq_heading">Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq1-heading">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1" data-i18n="faq1_q">
+                What is Intel’s approach to sustainability?
+              </button>
+            </h3>
+            <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" data-i18n="faq1_a">
+                Intel integrates sustainability into every aspect of its business, from product design to supply chain management, aiming for a positive global impact.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq2-heading">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2" data-i18n="faq2_q">
+                How can I learn more about Intel’s environmental goals?
+              </button>
+            </h3>
+            <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2-heading" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" data-i18n="faq2_a">
+                Visit our <a href="#" class="intel-learn-link" data-i18n="learn_more">Sustainability page</a> for detailed information on our goals, progress, and initiatives.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq3-heading">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3" data-i18n="faq3_q">
+                Is my information safe when subscribing?
+              </button>
+            </h3>
+            <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" data-i18n="faq3_a">
+                Yes. We use industry-standard security and never share your information without consent.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer mt-5" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-left" data-i18n="footer_copyright">
+        &copy; 2024 Intel Corporation
+      </div>
+      <nav class="footer-right" aria-label="Footer navigation">
+        <a href="#" class="footer-link" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="#" class="footer-link" data-i18n="footer_terms">Terms of Use</a>
+        <a href="#" class="footer-link" data-i18n="footer_contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- RTL/LTR & Language Switcher Script -->
+  <script>
+    // Language data (placeholders for demonstration)
+    const translations = {
+      en: {
+        title: "Intel Sustainability Timeline",
+        main_heading: "Intel Sustainability Timeline",
+        main_subheading: "Explore Intel’s journey toward a more sustainable future.",
+        feature1_heading: "Global Impact",
+        feature1_desc: "Intel’s sustainability initiatives drive positive change worldwide, advancing technology for a better planet.",
+        feature2_heading: "Circular Economy",
+        feature2_desc: "We reduce waste and reuse resources, supporting a circular economy for a greener, more sustainable future.",
+        feature3_heading: "Clean Energy",
+        feature3_desc: "Intel invests in renewable energy and energy-efficient technologies to power progress sustainably.",
+        learn_more: "Learn More",
+        newsletter_heading: "Stay Updated",
+        newsletter_desc: "Subscribe to Intel’s Sustainability Newsletter for the latest news, progress, and innovations.",
+        newsletter_privacy: "We respect your privacy. Unsubscribe at any time.",
+        form_name_label: "Name",
+        form_email_label: "Email address",
+        subscribe_btn: "Subscribe",
+        faq_heading: "Frequently Asked Questions",
+        faq1_q: "What is Intel’s approach to sustainability?",
+        faq1_a: "Intel integrates sustainability into every aspect of its business, from product design to supply chain management, aiming for a positive global impact.",
+        faq2_q: "How can I learn more about Intel’s environmental goals?",
+        faq2_a: "Visit our <a href=\"#\" class=\"intel-learn-link\">Sustainability page</a> for detailed information on our goals, progress, and initiatives.",
+        faq3_q: "Is my information safe when subscribing?",
+        faq3_a: "Yes. We use industry-standard security and never share your information without consent.",
+        footer_privacy: "Privacy Policy",
+        footer_terms: "Terms of Use",
+        footer_contact: "Contact",
+        footer_copyright: "&copy; 2024 Intel Corporation"
+      },
+      ar: {
+        title: "الجدول الزمني للاستدامة في إنتل",
+        main_heading: "الجدول الزمني للاستدامة في إنتل",
+        main_subheading: "استكشف رحلة إنتل نحو مستقبل أكثر استدامة.",
+        feature1_heading: "الأثر العالمي",
+        feature1_desc: "مبادرات الاستدامة في إنتل تحدث تغييرًا إيجابيًا في جميع أنحاء العالم، وتعزز التكنولوجيا من أجل كوكب أفضل.",
+        feature2_heading: "الاقتصاد الدائري",
+        feature2_desc: "نقلل من النفايات ونعيد استخدام الموارد، وندعم اقتصادًا دائريًا لمستقبل أكثر خضرة واستدامة.",
+        feature3_heading: "الطاقة النظيفة",
+        feature3_desc: "تستثمر إنتل في الطاقة المتجددة والتقنيات الموفرة للطاقة لدفع التقدم بشكل مستدام.",
+        learn_more: "اعرف المزيد",
+        newsletter_heading: "ابقَ على اطلاع",
+        newsletter_desc: "اشترك في نشرة إنتل للاستدامة للحصول على آخر الأخبار والتقدم والابتكارات.",
+        newsletter_privacy: "نحترم خصوصيتك. يمكنك إلغاء الاشتراك في أي وقت.",
+        form_name_label: "الاسم",
+        form_email_label: "البريد الإلكتروني",
+        subscribe_btn: "اشترك",
+        faq_heading: "الأسئلة الشائعة",
+        faq1_q: "ما هو نهج إنتل تجاه الاستدامة؟",
+        faq1_a: "تدمج إنتل الاستدامة في جميع جوانب أعمالها، من تصميم المنتجات إلى إدارة سلسلة التوريد، بهدف تحقيق تأثير إيجابي عالمي.",
+        faq2_q: "كيف يمكنني معرفة المزيد عن أهداف إنتل البيئية؟",
+        faq2_a: "قم بزيارة <a href=\"#\" class=\"intel-learn-link\">صفحة الاستدامة</a> الخاصة بنا لمزيد من المعلومات حول أهدافنا وتقدمنا ومبادراتنا.",
+        faq3_q: "هل معلوماتي آمنة عند الاشتراك؟",
+        faq3_a: "نعم. نستخدم معايير الأمان الصناعية ولا نشارك معلوماتك دون موافقتك.",
+        footer_privacy: "سياسة الخصوصية",
+        footer_terms: "شروط الاستخدام",
+        footer_contact: "اتصل بنا",
+        footer_copyright: "&copy; 2024 شركة إنتل"
+      },
+      he: {
+        title: "ציר הזמן של קיימות באינטל",
+        main_heading: "ציר הזמן של קיימות באינטל",
+        main_subheading: "גלו את המסע של אינטל לעתיד בר-קיימא יותר.",
+        feature1_heading: "השפעה עולמית",
+        feature1_desc: "יוזמות הקיימות של אינטל יוצרות שינוי חיובי ברחבי העולם, ומקדמות טכנולוגיה למען כוכב טוב יותר.",
+        feature2_heading: "כלכלה מעגלית",
+        feature2_desc: "אנחנו מצמצמים פסולת ומשתמשים מחדש במשאבים, ותומכים בכלכלה מעגלית לעתיד ירוק ובר-קיימא.",
+        feature3_heading: "אנרגיה נקייה",
+        feature3_desc: "אינטל משקיעה באנרגיה מתחדשת ובטכנולוגיות חסכוניות באנרגיה כדי לקדם התקדמות בת-קיימא.",
+        learn_more: "למידע נוסף",
+        newsletter_heading: "הישארו מעודכנים",
+        newsletter_desc: "הירשמו לניוזלטר הקיימות של אינטל לקבלת חדשות, התקדמות וחדשנות.",
+        newsletter_privacy: "אנו מכבדים את פרטיותכם. ניתן לבטל הרשמה בכל עת.",
+        form_name_label: "שם",
+        form_email_label: "דוא\"ל",
+        subscribe_btn: "הירשם",
+        faq_heading: "שאלות נפוצות",
+        faq1_q: "מהי הגישה של אינטל לקיימות?",
+        faq1_a: "אינטל משלבת קיימות בכל היבטי פעילותה, מעיצוב מוצרים ועד ניהול שרשרת האספקה, במטרה להשפיע לטובה על העולם.",
+        faq2_q: "איך אפשר ללמוד עוד על היעדים הסביבתיים של אינטל?",
+        faq2_a: "בקרו ב<a href=\"#\" class=\"intel-learn-link\">דף הקיימות</a> שלנו למידע מפורט על היעדים, ההתקדמות והיוזמות שלנו.",
+        faq3_q: "האם המידע שלי בטוח בהרשמה?",
+        faq3_a: "כן. אנו משתמשים באבטחה ברמה הגבוהה ביותר ולעולם לא משתפים את המידע שלך ללא הסכמה.",
+        footer_privacy: "מדיניות פרטיות",
+        footer_terms: "תנאי שימוש",
+        footer_contact: "צור קשר",
+        footer_copyright: "&copy; 2024 אינטל"
+      },
+      fa: {
+        title: "جدول زمانی پایداری اینتل",
+        main_heading: "جدول زمانی پایداری اینتل",
+        main_subheading: "سفر اینتل به سوی آینده‌ای پایدارتر را کشف کنید.",
+        feature1_heading: "تأثیر جهانی",
+        feature1_desc: "ابتکارات پایداری اینتل تغییرات مثبتی را در سراسر جهان ایجاد می‌کند و فناوری را برای سیاره‌ای بهتر پیش می‌برد.",
+        feature2_heading: "اقتصاد چرخشی",
+        feature2_desc: "ما با کاهش ضایعات و استفاده مجدد از منابع، از اقتصاد چرخشی برای آینده‌ای سبزتر حمایت می‌کنیم.",
+        feature3_heading: "انرژی پاک",
+        feature3_desc: "اینتل در انرژی‌های تجدیدپذیر و فناوری‌های کم‌مصرف سرمایه‌گذاری می‌کند تا پیشرفت را به طور پایدار تأمین کند.",
+        learn_more: "بیشتر بدانید",
+        newsletter_heading: "به‌روز بمانید",
+        newsletter_desc: "برای دریافت آخرین اخبار، پیشرفت‌ها و نوآوری‌ها در خبرنامه پایداری اینتل عضو شوید.",
+        newsletter_privacy: "ما به حریم خصوصی شما احترام می‌گذاریم. در هر زمان می‌توانید لغو اشتراک کنید.",
+        form_name_label: "نام",
+        form_email_label: "ایمیل",
+        subscribe_btn: "عضویت",
+        faq_heading: "سؤالات متداول",
+        faq1_q: "رویکرد اینتل به پایداری چیست؟",
+        faq1_a: "اینتل پایداری را در همه جنبه‌های کسب‌وکار خود، از طراحی محصول تا مدیریت زنجیره تأمین، با هدف تأثیر مثبت جهانی ادغام می‌کند.",
+        faq2_q: "چگونه می‌توانم درباره اهداف زیست‌محیطی اینتل بیشتر بدانم؟",
+        faq2_a: "برای اطلاعات بیشتر درباره اهداف، پیشرفت و ابتکارات ما به <a href=\"#\" class=\"intel-learn-link\">صفحه پایداری</a> مراجعه کنید.",
+        faq3_q: "آیا اطلاعات من هنگام عضویت ایمن است؟",
+        faq3_a: "بله. ما از استانداردهای امنیتی صنعتی استفاده می‌کنیم و هرگز بدون رضایت شما اطلاعاتتان را به اشتراک نمی‌گذاریم.",
+        footer_privacy: "سیاست حفظ حریم خصوصی",
+        footer_terms: "شرایط استفاده",
+        footer_contact: "تماس",
+        footer_copyright: "&copy; 2024 اینتل"
+      }
+    };
+
+    // RTL language codes
+    const rtlLangs = ['ar', 'he', 'fa'];
+
+    // Bootstrap CSS URLs
+    const BOOTSTRAP_LTR = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css";
+    const BOOTSTRAP_RTL = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css";
+
+    // Update language and direction
+    function setLanguage(lang) {
+      // Set lang attribute
+      document.documentElement.lang = lang;
+      // Set dir attribute
+      document.documentElement.dir = rtlLangs.includes(lang) ? "rtl" : "ltr";
+      // Swap Bootstrap CSS for RTL/LTR
+      const bootstrapCss = document.getElementById("bootstrap-css");
+      bootstrapCss.href = rtlLangs.includes(lang) ? BOOTSTRAP_RTL : BOOTSTRAP_LTR;
+      // Update all text nodes with data-i18n
+      const dict = translations[lang] || translations.en;
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key]) {
+          // If innerHTML contains HTML (e.g., links), use innerHTML
+          if (dict[key].includes('<a')) {
+            el.innerHTML = dict[key];
+          } else {
+            el.textContent = dict[key];
+          }
+        }
+      });
+      // Accessibility: Announce language and direction change
+      announceLangDir(lang, document.documentElement.dir);
+    }
+
+    // Accessibility: Live region for announcing language/dir changes
+    function announceLangDir(lang, dir) {
+      let live = document.getElementById("lang-dir-live");
+      if (!live) {
+        live = document.createElement("div");
+        live.id = "lang-dir-live";
+        live.setAttribute("aria-live", "polite");
+        live.className = "visually-hidden";
+        document.body.appendChild(live);
+      }
+      const langName = {
+        en: "English", ar: "العربية", he: "עברית", fa: "فارسی"
+      }[lang] || lang;
+      live.textContent = `Language set to ${langName}, direction ${dir.toUpperCase()}`;
+    }
+
+    // Language switcher event
+    document.addEventListener("DOMContentLoaded", function() {
+      const langSwitcher = document.getElementById("lang-switcher");
+      // Set initial language based on <html lang="">
+      setLanguage(document.documentElement.lang || "en");
+      langSwitcher.value = document.documentElement.lang || "en";
+      langSwitcher.addEventListener("change", function() {
+        setLanguage(this.value);
+      });
+    });
+  </script>
+</body>
+</html>
