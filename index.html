@@ -484,6 +484,18 @@
       setDirection(userLang);
       // 3. Translate page
       translatePage(userLang);
+      // 4. Set dropdown to detected language
+      const langSwitcher = document.getElementById("lang-switcher");
+      if (langSwitcher) langSwitcher.value = userLang;
+      // 5. Listen for language changes
+      if (langSwitcher) {
+        langSwitcher.addEventListener("change", function() {
+          const selectedLang = this.value;
+          document.documentElement.lang = selectedLang;
+          setDirection(selectedLang);
+          translatePage(selectedLang);
+        });
+      }
     });
   </script>
 </body>
